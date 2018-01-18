@@ -1,0 +1,17 @@
+.page-main {
+  padding-top: 204px;
+  transition-duration: 1s;
+}
+
+.page-main__inner {
+  display: flex;
+  @include container;
+}
+
+.page-main--closed-header {
+  padding-top: 20px;
+}
+
+.page-main__column-text {
+  width: 25%;
+}
