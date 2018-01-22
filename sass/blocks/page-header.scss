@@ -3,7 +3,6 @@
   right: 0;
   left: 0;
   top: 0;
-//  width: 100%;
   background-color: #7f7f7f;
   transition-property: top;
   transition-duration: 1s;
@@ -15,16 +14,14 @@
 
 .page-header__main {
   display: flex;
-  padding-left: 20px;
-  padding-right: 20px;
   min-height: 184px;
   @include container;
-  box-sizing: border-box;
+//  box-sizing: border-box;
 }
 
 .page-header__logo {
   width: 25%;
-  z-index: -1;
+  flex-shrink: 0;
 }
 
 .page-header__nav {

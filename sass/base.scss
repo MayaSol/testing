@@ -1,3 +1,12 @@
-html {
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: -184px;
+  height: 100%;
+  box-sizing: border-box;
 }

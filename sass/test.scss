@@ -1,5 +1,10 @@
 .page-header__logo {
   background-color: beige;
+  outline: 1px solid red;
+}
+
+.page-header__main {
+  outline: 1px dashed green;
 }
 
 .main-nav__item {
@@ -10,3 +15,7 @@
   outline: 1px dashed green;
 }
 
+
+.page-main__column-text {
+  outline: 1px solid red;
+}
