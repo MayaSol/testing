@@ -1,6 +1,8 @@
 .page-main {
   padding-top: 204px;
   transition-duration: 1s;
+  z-index: 1;
+  font-size: 16px;
 }
 
 .page-main__inner {
@@ -15,4 +17,10 @@
 .page-main__column-text {
   width: 25%;
   flex-shrink: 0;
+  background-color: #7f7f7f;
+  padding-bottom: 20px;
+}
+
+.page-main__column-catalog {
+  padding-bottom: 20px;
 }

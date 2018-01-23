@@ -1,0 +1,61 @@
+$tooltip-font-size: 0.75em;
+$tooltip-triangle-width: 0.3em;
+$tooltip-triangle-height: 0.45em;
+
+.tooltip {
+  display: inline-block;
+  position: relative;
+  border-bottom: 2px dashed red;
+  &::before {
+    position: absolute;
+    display: none;
+    content: 'page-main.scss';
+    content: attr(data-tooltip);
+    padding: 10px;
+    min-width: 200px;
+    color: #ffffff;
+    background-color: rgba(0,0,0,0.8);
+    font-size: $tooltip-font-size;
+  }
+  &::after {
+    display: none;
+    position: absolute;
+  }
+}
+
+.tooltip:hover {
+  &::after,
+  &::before {
+    display: block;
+  }
+}
+
+.tooltip--top {
+  &::before {
+    bottom: 100%;
+    left: 50%;
+    margin-left: -10px;
+  }
+  &::after {
+    @include triangle(bottom,rgba(0,0,0,0.8),$tooltip-triangle-width,$tooltip-triangle-height);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100%;
+    margin-bottom: -1 * $tooltip-triangle-height;
+  }
+}
+
+.tooltip--bottom {
+  &::before {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: $tooltip-triangle-height / $tooltip-font-size * 1em;
+  }
+  &::after {
+    @include triangle(top,rgba(0,0,0,0.8),$tooltip-triangle-width,$tooltip-triangle-height);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+  }
+}
