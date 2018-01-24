@@ -14,13 +14,22 @@
   padding-top: 20px;
 }
 
-.page-main__column-text {
+.page-main__text {
   width: 25%;
   flex-shrink: 0;
   background-color: #7f7f7f;
   padding-bottom: 20px;
 }
 
-.page-main__column-catalog {
+.page-main__catalog {
   padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 34px;
+  margin-left: 10px;
+}
+
+.text-bottom {
+  margin-top: auto;
 }
