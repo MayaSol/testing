@@ -1,7 +1,10 @@
 .product-cards {
   display: flex;
-  flex-wrap: wrap;
+
   width: 100%;
+  margin-bottom: 30px;
+
+  flex-wrap: wrap;
 }
 
 .product-cards__item {

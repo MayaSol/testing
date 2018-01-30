@@ -1,12 +1,16 @@
 .page-main {
-  padding-top: 204px;
-  transition-duration: 1s;
   z-index: 1;
+
+  padding-top: 204px;
+
   font-size: 16px;
+
+  transition-duration: 1s;
 }
 
 .page-main__inner {
   display: flex;
+
   @include container;
 }
 
@@ -16,20 +20,28 @@
 
 .page-main__text {
   width: 25%;
-  flex-shrink: 0;
-  background-color: #7f7f7f;
   padding-bottom: 20px;
+
+  background-color: #7f7f7f;
+
+  flex-shrink: 0;
 }
 
 .page-main__catalog {
-  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+
   margin-top: 34px;
   margin-left: 10px;
+  padding-bottom: 20px;
+
+  align-items: flex-start;
 }
 
 .text-bottom {
   margin-top: auto;
+}
+
+.moving-images {
+  display: flex;
 }

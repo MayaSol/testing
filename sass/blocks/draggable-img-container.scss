@@ -1,0 +1,18 @@
+.draggable-img-container {
+  position: relative;
+
+  overflow: hidden;
+
+  width: 350px;
+  height: 228px;
+
+  border: 2px solid #000000;
+  background-color: grey;
+  & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    cursor: move;
+  }
+}
