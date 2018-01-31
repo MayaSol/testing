@@ -1,19 +1,22 @@
-.draggable-img-container {
+.sliding-img-container {
   position: relative;
 
   overflow: hidden;
 
   width: 350px;
   height: 228px;
-  margin-right: 50px;
 
   border: 2px solid #000000;
-  background-color: grey;
+  background-color: transparent;
   & img {
     position: absolute;
+    z-index: -1;
     top: 0;
     left: 0;
 
-    cursor: grab;
+    margin-top: 0;
+    margin-left: 0;
+
+    transition: 2s;
   }
 }

@@ -1,13 +1,13 @@
 .page-header {
   position: fixed;
+  z-index: 100;
+  top: 0;
   right: 0;
   left: 0;
-  top: 0;
-  background-color: #7f7f7f;
-  transition-property: top;
-  transition-duration: 1s;
-  z-index: 100;
 
+  transition: 1s;
+
+  background-color: #7f7f7f;
 }
 
 .page-header--closed {
@@ -16,13 +16,15 @@
 
 .page-header__main {
   display: flex;
+
   min-height: 184px;
+
   @include container;
-//  box-sizing: border-box;
 }
 
 .page-header__logo {
   width: 25%;
+
   flex-shrink: 0;
 }
 
@@ -31,22 +33,27 @@
 }
 
 .page-header__toggle {
-  display: block;
-  z-index: -10;
   position: relative;
+  z-index: -10;
+
+  display: block;
+
   min-height: 20px;
+
   background-color: #000000;
   &:after {
-    content: '';
     position: absolute;
-    width: 20px;
-    height: 2px;
     top: 5px;
     left: 50%;
+
+    width: 20px;
+    height: 2px;
     margin-left: -10px;
+
+    content: "";
+
     background-color: #ffffff;
     box-shadow: 0 4px 0 0 #ffffff,
     0 8px 0 0 #ffffff;
   }
 }
-

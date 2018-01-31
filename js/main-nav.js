@@ -1,3 +1,6 @@
+'use strict';
+
+(function() {
 var mainNavItems = document.querySelectorAll('.main-nav__item');
 
 var onMainNavItemHover = function(event) {
@@ -15,9 +18,10 @@ var onMainNavItemHover = function(event) {
   }
 }
 
-for(i=0;i<mainNavItems.length;i++) {
+for(var i=0;i<mainNavItems.length;i++) {
   mainNavItems[i].addEventListener('mouseover',onMainNavItemHover);
 }
 
+})();
 
 

@@ -1,55 +1,65 @@
+'use strict';
+
+(function() {
 var imgContainer = document.querySelector('.draggable-img-container');
 var imgDraggable = imgContainer.querySelector('img');
 var offsetXStart;
 var offsetYStart;
 
-var onDocumentMouseMove = function(e) {
+var onImgContainerMouseMove = function(e) {
 
-/*  console.log('e.currentTarget = ' + e.currentTarget + ' ; ' + e.currentTarget.className +
+  console.log('e.currentTarget = ' + e.currentTarget + ' ; ' + e.currentTarget.className +
     '; e.target = ' + e.target + ' ' + e.target.className + '; ' +
-    'offsetX = ' + e.offsetX + '; offsetY = ' + e.offsetY);*/
+    'offsetX = ' + e.offsetX + '; offsetY = ' + e.offsetY);
 
-  if (e.target == imgDraggable) {
 
     var offsetX = e.target.offsetLeft + e.offsetX;
     var offsetY = e.target.offsetTop + e.offsetY;
+    var LeftMax = imgContainer.clientWidth - imgDraggable.clientWidth;
+    var TopMax = imgContainer.clientHeight - imgDraggable.clientHeight;
 
-    var Left = Math.min( Math.max(offsetX - offsetXStart, imgContainer.clientWidth - imgDraggable.clientWidth), 0 );
-    var Top = Math.min( Math.max(offsetY - offsetYStart, imgContainer.clientHeight - imgDraggable.clientHeight), 0 );
+    var Left = Math.min( Math.max(offsetX - offsetXStart, LeftMax), 0 );
+    var Top = Math.min( Math.max(offsetY - offsetYStart, TopMax), 0 );
 
 
     imgDraggable.style.left = Left + 'px';
     imgDraggable.style.top = Top + 'px';
 
-  }
-
-  else {
-    CancelHandlers();
-  }
-
 }
 
-var onDocumentMouseUp = function(e) {
+var onImgContainerMouseUp = function(e) {
+  console.log('mouse up');
   CancelHandlers();
   return;
 }
 
-var onImgContainerMouseDown = function(e) {
+var onImgContainerMouseOut = function(e) {
+  CancelHandlers();
+  return;
+}
+
+var onImgMouseDown = function(e) {
   offsetXStart = e.offsetX;
   offsetYStart = e.offsetY;
 
-  e.preventDefault(); //чтобы картинка не краснела при нажатии
+  console.log('offsetYStart = ' + offsetXStart);
 
-  document.addEventListener('mousemove', onDocumentMouseMove);
-  document.addEventListener('mouseup', onDocumentMouseUp);
-  return;
+  e.preventDefault();
+
+  imgDraggable.style.cursor = 'grabbing';
+
+  imgContainer.addEventListener('mousemove', onImgContainerMouseMove);
+  imgContainer.addEventListener('mouseup', onImgContainerMouseUp);
 }
 
 var CancelHandlers = function() {
-  document.removeEventListener('mousemove', onDocumentMouseMove);
-  document.removeEventListener('mouseup', onDocumentMouseUp);
+  imgDraggable.style.cursor = '';
+  imgContainer.removeEventListener('mousemove', onImgContainerMouseMove);
+  imgContainer.removeEventListener('mouseup', onImgContainerMouseUp);
   return;
 }
 
-imgDraggable.addEventListener('mousedown', onImgContainerMouseDown);
+imgDraggable.addEventListener('mousedown', onImgMouseDown);
+imgContainer.addEventListener('mouseout', onImgContainerMouseOut);
 
+})();
