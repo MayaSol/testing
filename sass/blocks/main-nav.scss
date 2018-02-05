@@ -17,7 +17,9 @@
 .main-nav__item {
   position: relative;
 
-  padding: 0;
+  display: flex;
+  min-height: 80px;
+  padding: 5px;
 
   text-align: center;
 
@@ -38,26 +40,27 @@
       transition: margin-top 0.5s, heigth 0.5s;
     }
     ul {
-      animation: bounce 1.5s 0.2s;
+      animation: bounce 0.8s 0.2s;
     }
   }
 }
 
 @keyframes bounce {
-
-33% {
-  transform: scaleY(1.05) translateY(2.25%);
-}
-66% {
-  transform: scaleY(0.95) translateY(-2.8%);
-}
-100% {
-  transform: scaleY(1);
-}
+  33% {
+    transform: translateY(2.5%) scaleY(1.05) ;
+  }
+  66% {
+    transform: translateY(-2.5%) scaleY(0.95) ;
+  }
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
 }
 
 .main-nav__item a {
   display: block;
+
+  margin: auto;
 
   text-decoration: none;
 
@@ -67,18 +70,7 @@
 .main-nav__item > a {
   position: relative;
 
-  height: 80px;
-  padding: 2%;
-
-  line-height: 80px;
-
-  & > span {
-    display: inline-block;
-
-    line-height: normal;
-
-    vertical-align: middle;
-  }
+  display: block;
 }
 
 .main-nav__item ul {

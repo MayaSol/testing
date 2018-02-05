@@ -7,22 +7,20 @@ var imgSliding = imgContainer.querySelector('img');
 
 var onImgContainerMouseMove = function(e) {
   e.preventDefault();
+  var rightOffset = imgContainer.clientWidth / 2;
+  var topOffset = imgContainer.clientHeight / 2;
 
-  if (e.offsetX < 15) {
+  if (e.offsetX < rightOffset) {
     imgSliding.style.marginLeft = '0';
-    return;
   }
-  if (e.offsetX > imgContainer.clientWidth - 15) {
+  if (e.offsetX > imgContainer.clientWidth - rightOffset) {
     imgSliding.style.marginLeft = imgContainer.clientWidth - imgSliding.clientWidth + 'px';
-    return;
   }
-  if (e.offsetY < 15) {
+  if (e.offsetY < topOffset) {
     imgSliding.style.marginTop = '0';
-    return;
   }
-  if (e.offsetY > imgContainer.clientHeight - 15) {
+  if (e.offsetY > imgContainer.clientHeight - topOffset) {
     imgSliding.style.marginTop = imgContainer.clientHeight - imgSliding.clientHeight + 'px';
-    return;
   }
 
 

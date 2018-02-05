@@ -1,11 +1,9 @@
 .page-main {
   z-index: 1;
 
-  padding-top: 204px;
-
   font-size: 16px;
-
-  transition: 1s;
+  transform: translate3d(0,0,0);
+  transform-style: preserve-3d;
 }
 
 .page-main__inner {
@@ -14,15 +12,15 @@
   @include container;
 }
 
-.page-main--closed-header {
-  padding-top: 20px;
-}
-
 .page-main__text {
+  box-sizing: border-box;
   width: 25%;
+  padding-top: 30px;
+  padding-right: 12px;
   padding-bottom: 20px;
+  padding-left: 15px;
 
-  background-color: #7f7f7f;
+  background-color: rgba(127, 127, 127, 0.5);
 
   flex-shrink: 0;
 }

@@ -1,7 +1,87 @@
 .page-footer {
-  min-height: 100px;
-  background-color: #7f7f7f;
+  margin-top: auto;
+  font-family: "PTSans", sans-serif;
+  padding-top: 19px;
+  padding-bottom: 14px;
+
+  background-color: rgba(127, 127, 127, 0.5);
   flex-grow: 0;
   flex-shrink: 0;
-  margin-top: auto;
+}
+
+.page-footer__inner {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  @include container;
+  margin: auto;
+}
+
+.page-footer__copyrights {
+  display: flex;
+  align-items: center;
+  width: 25%;
+  min-height: 50px;
+
+  flex-shrink: 0;
+  p {
+    margin-left: 22px;
+  }
+}
+
+.page-footer__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+
+  flex-grow: 1;
+}
+
+.nav-secondary {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  a {
+    color: #000000;
+    text-decoration: underline;
+  }
+  li {
+    position: relative;
+
+    padding-left: 12px;
+    padding-right: 18px;
+    &:hover a{
+      color: #ffffff;
+    }
+  }
+}
+
+.nav-secondary li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  background-color: #000000;
+}
+
+.page-footer__created {
+  display: flex;
+  align-items: center;
+  width: 25%;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+
+.page-footer__logo {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 3px solid #a5a5a5;
+  background-size: 100% 100%;
+  background-image: url('../img/logo-main.png');
 }

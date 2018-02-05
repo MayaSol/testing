@@ -1,12 +1,35 @@
-html, body {
+html {
+  height: 100%;
+}
+body {
   height: 100%;
   margin: 0;
+
+  font-family: "OpenSans", sans-serif;
+
+  -webkit-backface-visibility: hidden;
 }
 
-.wrapper {
+.page-wrapper {
   display: flex;
   flex-direction: column;
-  padding-top: -184px;
-  height: 100%;
-  box-sizing: border-box;
+
+  height: auto;
+  min-height: 100%;
+  margin: 0;
+  padding-top: 204px;
+
+  transition: padding-top 1s;
+  transform: translate3d(0,0,0);
+
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+}
+
+.page-wrapper--closed {
+  padding-top: 20px;
+}
+
+.body--closed-header {
+  padding-top: 20px;
 }
