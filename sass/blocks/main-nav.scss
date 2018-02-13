@@ -18,6 +18,8 @@
   position: relative;
 
   display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 80px;
   padding: 5px;
 
@@ -59,8 +61,6 @@
 
 .main-nav__item a {
   display: block;
-
-  margin: auto;
 
   text-decoration: none;
 
