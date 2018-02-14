@@ -37,8 +37,6 @@
 .page-footer__nav {
   display: flex;
 
-  min-height: 50px;
-
   align-items: center;
   justify-content: center;
   flex-grow: 1;
@@ -46,6 +44,7 @@
 
 .nav-secondary {
   display: flex;
+  flex-wrap: wrap;
 
   margin: 0;
   padding: 0;
@@ -58,7 +57,6 @@
   }
   li {
     position: relative;
-
     padding-right: 18px;
     padding-left: 12px;
     &:hover a {
@@ -86,6 +84,7 @@
 
   width: 25%;
   min-height: 50px;
+  padding-left: 10px;
 
   align-items: center;
   flex-shrink: 0;

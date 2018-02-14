@@ -8,6 +8,7 @@ body {
   font-family: "OpenSans", sans-serif;
 
   -webkit-backface-visibility: hidden;
+
 }
 
 .page-wrapper {
@@ -19,8 +20,8 @@ body {
   margin: 0;
   padding-top: 204px;
 
-  transition: padding-top 1s;
-  transform: translate3d(0,0,0);
+  transition: 1s;
+  transform: translate3d(0, 0, 0);
 
   transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
@@ -28,8 +29,6 @@ body {
 
 .page-wrapper--closed {
   padding-top: 20px;
+  transform: translate3d(0, 0, 0);
 }
 
-.body--closed-header {
-  padding-top: 20px;
-}

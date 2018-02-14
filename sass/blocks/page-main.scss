@@ -34,10 +34,13 @@
   padding-bottom: 20px;
 
   align-items: flex-start;
+  box-sizing: border-box;
+  width: 75%;
 }
 
 .text-bottom {
   margin-top: auto;
+  width: 100%;
 }
 
 .moving-images {

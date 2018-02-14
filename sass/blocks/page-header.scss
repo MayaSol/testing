@@ -9,11 +9,11 @@
   flex-direction: column;
 
   transition: transform 1s;
-  transform: translate3d(0,0,0);
+//  transform: translate3d(0,0,0);
 
   background-color: #ffffff;
 
-  transform-style: preserve-3d;
+//  transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
   &::after {
     position: absolute;
@@ -32,11 +32,12 @@
 }
 
 .page-header--closed {
-  transform: translateY(-184px) translate3d(0,0,0);;
+  transform: translate3d(0, -184px, 0);
 }
 
 .page-header__main {
   display: flex;
+  align-items: center;
 
   box-sizing: border-box;
   width: 100%;

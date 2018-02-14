@@ -22,12 +22,14 @@
     margin-bottom: auto;
 
     text-align: center;
+    width: 100%;
   }
 }
 
 .product-card__img {
   position: relative;
   z-index: -1;
+  max-width: 100%;
 
   margin-top: 5px;
   margin-bottom: 10px;
