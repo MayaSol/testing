@@ -1,3 +1,15 @@
+@keyframes bounce {
+  33% {
+    transform: translate3d(0, calc(2.5%), 0) scaleY(1.05);
+  }
+  66% {
+    transform: translate3d(0, calc(-2.5%), 0) scaleY(0.95);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scaleY(1);
+  }
+}
+
 .main-nav {
   margin: auto;
 
@@ -42,20 +54,8 @@
       transition: margin-top 0.5s, heigth 0.5s;
     }
     ul {
-      animation: bounce 0.8s 0.2s;
+      animation: bounce 0.8s 0.2s forwards;
     }
-  }
-}
-
-@keyframes bounce {
-  33% {
-    transform: translateY(2.5%) scaleY(1.05) ;
-  }
-  66% {
-    transform: translateY(-2.5%) scaleY(0.95) ;
-  }
-  100% {
-    transform: translateY(0) scaleY(1);
   }
 }
 
