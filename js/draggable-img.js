@@ -8,11 +8,6 @@ var offsetYStart;
 
 var onImgContainerMouseMove = function(e) {
 
-  console.log('e.currentTarget = ' + e.currentTarget + ' ; ' + e.currentTarget.className +
-    '; e.target = ' + e.target + ' ' + e.target.className + '; ' +
-    'offsetX = ' + e.offsetX + '; offsetY = ' + e.offsetY);
-
-
     var offsetX = e.target.offsetLeft + e.offsetX;
     var offsetY = e.target.offsetTop + e.offsetY;
     var LeftMax = imgContainer.clientWidth - imgDraggable.clientWidth;
@@ -20,7 +15,6 @@ var onImgContainerMouseMove = function(e) {
 
     var Left = Math.min( Math.max(offsetX - offsetXStart, LeftMax), 0 );
     var Top = Math.min( Math.max(offsetY - offsetYStart, TopMax), 0 );
-
 
     imgDraggable.style.left = Left + 'px';
     imgDraggable.style.top = Top + 'px';

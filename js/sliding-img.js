@@ -23,7 +23,6 @@ var onImgContainerMouseMove = function(e) {
     imgSliding.style.marginTop = imgContainer.clientHeight - imgSliding.clientHeight + 'px';
   }
 
-
 }
 
 var onImgContainerMouseDown = function(e) {

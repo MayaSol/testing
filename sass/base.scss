@@ -19,11 +19,11 @@ body {
   min-height: 100%;
   margin: 0;
   padding-top: 204px;
+  box-sizing: border-box;
 
   transition: 1s;
   transform: translate3d(0, 0, 0);
 
-  transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
 }
 
@@ -31,4 +31,8 @@ body {
   padding-top: 20px;
   transform: translate3d(0, 0, 0);
 }
+
+
+
+
 

@@ -14,6 +14,7 @@ var run = require("run-sequence");
 //var uglify = require("gulp-uglify");
 var pump = require("pump");
 var csscomb = require("gulp-csscomb");
+var debug = require('postcss-debug').createDebugger();
 
 gulp.task("clean", function() {
   return del("build");
@@ -38,20 +39,17 @@ gulp.task("style", function() {
     .pipe(sass({
             includePaths: require('node-normalize-scss').includePaths
           }))
-//    .pipe(sass())
-    .pipe(postcss([
-      autoprefixer({browsers: [
-        "last 2 versions"
-      ]})
-    ]))
-    .pipe(csscomb())
+    .pipe(postcss([ autoprefixer() ]))
+//    .pipe(csscomb())
     .pipe(gulp.dest("build/css"))
 //.pipe(minify())
 //    .pipe(rename("style.min.css"))
 //   .pipe(gulp.dest("build/css"))
 
-    .pipe(server.stream());
+//    .pipe(server.stream());
 });
+
+
 
 //gulp.task("images", function(){
 //  return gulp.src("build/img/**/*.{png,jpg,gif}")
@@ -78,6 +76,7 @@ gulp.task("build", function(fn) {
   run("clean",
       "copy",
       "style",
+//      "prefix",
 //      "images",
 //      "compress",
       fn);
