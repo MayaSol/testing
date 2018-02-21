@@ -6,7 +6,7 @@
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.x",
     "autoprefixer": "6.7.x",
-    "browser-sync": "2.18.12",
+    "browser-sync": "^2.18.12",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-csscomb": "^3.0.8",
@@ -41,6 +41,7 @@
     "node": "6.10"
   },
   "dependencies": {
+    "lodash": "^4.17.5",
     "normalize.css": "^7.0.0"
   }
 }

@@ -29,7 +29,8 @@
   background-color: #3c3a3a;
 
   flex-grow: 1;
-  flex-basis: 15%;
+  flex-basis: 10%;
+  min-width: 0;
   &:last-child {
     border-right: none;
   }
@@ -50,6 +51,9 @@
   text-decoration: none;
 
   color: #ffffff;
+
+  word-wrap: break-word;
+  min-width: 0;
 }
 
 .main-nav__item > a {
