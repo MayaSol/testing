@@ -1,6 +1,5 @@
-$tooltip-font-size: 0.75em;
-$tooltip-triangle-width: 0.3em;
-$tooltip-triangle-height: 0.45em;
+$tooltip-triangle-width: 4px;
+$tooltip-triangle-height: 6px;
 
 .tooltip {
   display: inline-block;
@@ -9,13 +8,12 @@ $tooltip-triangle-height: 0.45em;
   &::before {
     position: absolute;
     display: none;
-    content: 'page-main.scss';
     content: attr(data-tooltip);
     padding: 10px;
     min-width: 200px;
     color: #ffffff;
     background-color: rgba(0,0,0,0.8);
-    font-size: $tooltip-font-size;
+    font-size: 1.2rem;
   }
   &::after {
     display: none;
@@ -40,7 +38,7 @@ $tooltip-triangle-height: 0.45em;
     @include triangle(bottom,rgba(0,0,0,0.8),$tooltip-triangle-width,$tooltip-triangle-height);
     left: 50%;
     transform: translateX(-50%);
-    bottom: 100%;
+    top: 0;
     margin-bottom: -1 * $tooltip-triangle-height;
   }
 }
@@ -50,7 +48,7 @@ $tooltip-triangle-height: 0.45em;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: $tooltip-triangle-height / $tooltip-font-size * 1em;
+    margin-top: $tooltip-triangle-height;
   }
   &::after {
     @include triangle(top,rgba(0,0,0,0.8),$tooltip-triangle-width,$tooltip-triangle-height);
