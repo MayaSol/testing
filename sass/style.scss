@@ -1,7 +1,8 @@
 @import "normalize";
-@import "mixins.scss";
+@import "variables.scss";
+@import "mixins/mixins-base.scss";
 @import "fonts.scss";
-@import "mixin/triangle.scss";
+@import "mixins/triangle.scss";
 @import "base.scss";
 @import "blocks/page-header.scss";
 @import "blocks/main-nav.scss";
