@@ -6,12 +6,13 @@ var plumber = require("gulp-plumber");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var server = require("browser-sync").create();
-//var minify = require("gulp-csso");
+var minify = require("gulp-csso");
 var rename = require("gulp-rename");
+var concat = require("gulp-concat");
 //var imagemin = require("gulp-imagemin");
 var del = require("del");
 var run = require("run-sequence");
-//var uglify = require("gulp-uglify");
+var uglify = require("gulp-uglify");
 var pump = require("pump");
 var csscomb = require("gulp-csscomb");
 var debug = require('postcss-debug').createDebugger();
@@ -41,10 +42,9 @@ gulp.task("style", function() {
           }))
     .pipe(postcss([ autoprefixer() ]))
 //    .pipe(csscomb())
+    .pipe(minify())
+    .pipe(rename("style.min.css"))
     .pipe(gulp.dest("build/css"))
-//.pipe(minify())
-//    .pipe(rename("style.min.css"))
-//   .pipe(gulp.dest("build/css"))
 
 //    .pipe(server.stream());
 });
@@ -61,24 +61,31 @@ gulp.task("style", function() {
 });
 */
 
-//gulp.task("compress", function(cb){
-//  pump([
-//    gulp.src("build/js/**/*.js"),
-/*    uglify(),
-    gulp.dest("build/js-mini")
+gulp.task('scripts', function() {
+  return gulp.src('build/js/**/*.js')
+    .pipe(concat('index.min.js'))
+    .pipe(gulp.dest('build/js-min'));
+});
+
+gulp.task("compress", function(cb){
+  pump([
+    gulp.src("build/js-min/**/*.js"),
+    uglify(),
+    gulp.dest("build/js-min")
     ],
     cb
     );
 });
-*/
+
 
 gulp.task("build", function(fn) {
   run("clean",
       "copy",
       "style",
+      "scripts",
 //      "prefix",
 //      "images",
-//      "compress",
+      "compress",
       fn);
 });
 
