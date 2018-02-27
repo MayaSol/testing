@@ -9,10 +9,8 @@
   flex-direction: column;
 
   transition: transform 1s;
-  //  transform: translate3d(0,0,0);
 
   background-color: #ffffff;
-  //  transform-style: preserve-3d;
 
   -webkit-backface-visibility: hidden;
   @include container;
@@ -34,7 +32,7 @@
 }
 
 .page-header--closed {
-  transform: translate3d(0, -184px, 0);
+  transform: translate3d(0, -#{$header-main-height}, 0);
 }
 
 .page-header__main {
@@ -43,7 +41,7 @@
 
   box-sizing: border-box;
   width: 100%;
-  min-height: 184px;
+  min-height: $header-main-height;
   padding: 0 20px;
 
   align-items: center;
@@ -81,7 +79,7 @@
 
   display: block;
 
-  min-height: 20px;
+  min-height: $header-toggle-height;
 
   background-color: #000000;
   &:after {

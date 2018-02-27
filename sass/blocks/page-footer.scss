@@ -1,9 +1,9 @@
 .page-footer {
   margin-top: auto;
   padding-top: 19px;
+  padding-right: 20px;
   padding-bottom: 14px;
   padding-left: 20px;
-  padding-right: 20px;
 
   font-family: "PTSans", sans-serif;
   font-size: 1.6rem;
@@ -39,6 +39,7 @@
 
 .page-footer__nav {
   display: flex;
+  width: 50%;
 
   align-items: center;
   justify-content: center;
@@ -47,12 +48,14 @@
 
 .nav-secondary {
   display: flex;
-  flex-wrap: wrap;
+  width: 100%;
 
   margin: 0;
   padding: 0;
 
   list-style: none;
+
+  flex-wrap: wrap;
   a {
     text-decoration: underline;
 
@@ -60,6 +63,7 @@
   }
   li {
     position: relative;
+
     padding-right: 18px;
     padding-left: 12px;
     &:hover a {
@@ -94,14 +98,16 @@
 }
 
 .page-footer__logo {
+  display: block;
+
   width: 75px;
   height: 75px;
 
   border: 3px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   background-image: url("../img/logo-main.png");
-  background-size: 100% 100%;
   background-repeat: no-repeat;
+  background-size: 100% 100%;
 
-//  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.35);
+  //  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.35);
 }
