@@ -43,7 +43,7 @@
     "node": "6.10"
   },
   "dependencies": {
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.21",
     "normalize.css": "^7.0.0"
   }
 }
